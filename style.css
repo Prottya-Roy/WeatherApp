@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.wrapper {
+    background: whitesmoke;
+    width: 450px;
+    border-radius: 10px;
+}
+
+.wrapper header {
+    color: blue;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1.5px solid grey;
+}
+
+header i {
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.wrapper.active header i {
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.wrapper .input-part {
+    margin: 20px 20px 25px;
+}
+
+.wrapper.active .input-part {
+    display: none;
+}
+
+.input-part .input-text {
+    display: none;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.input-part .input-text.error {
+    display: block;
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.input-part .input-text.pending {
+    display: block;
+    color: #0c5460;
+    background: #d1ecf1;
+    border: 1px solid #bee4eb;
+}
+
+.input-part :where(input,
+    button) {
+    width: 100%;
+    height: 50px;
+    border: 1px solid grey;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.input-part input:is(:focus, :valid) {
+    border: 2px solid #43aafc;
+}
+
+.input-part input::placeholder {
+    color: #bfbfbf;
+}
+
+.input-part button {
+    color: azure;
+    background: blue;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.input-part button:hover {
+    background: #1d9ffc;
+}
+
+.input-part .separator {
+    height: 1.5px;
+    width: 100%;
+    margin: 25px 0;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator::before {
+    content: "OR";
+    font-size: 20px;
+    padding: 0 15px;
+    background: whitesmoke;
+}
+
+.wrapper .weather-part {
+    margin: 30px 0 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper.active .weather-part {
+    display: flex;
+}
+
+.weather-part img {
+    max-width: 125px;
+}
+
+.weather-part .temp {
+    display: flex;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.weather-part .temp .number {
+    font-weight: 600;
+}
+
+.weather-part .temp .deg {
+    font-size: 40px;
+    margin: 10px 5px 0 0;
+    display: block;
+}
+
+.weather-part .weather {
+    font-size: 20px;
+    text-align: center;
+    margin: -5px 20px 15px;
+}
+
+.weather-part .location {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.location i {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.weather-part .bottom-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid grey;
+    justify-content: space-between;
+}
+
+.bottom-details .column {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.column i {
+    color: #43AFFC;
+    font-size: 40px;
+}
+
+.column.humidity {
+    border-left: 1px solid gray;
+}
+
+.column.wind {
+    border-left: 1px solid gray;
+}
+
+.column .details {
+    margin-left: 3px;
+}
+
+.details .temp,
+.humidity,
+.wind span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.details .temp .deg {
+    margin: 0;
+    font-size: 19px;
+    pad: 0 2px 0 1px;
+}
+
+.details p {
+    font-size: 15px;
+    margin-top: -6px;
+}
